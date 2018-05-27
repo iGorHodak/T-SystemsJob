@@ -13,7 +13,6 @@ public class MainPageTest {
 
     @Before
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -22,7 +21,7 @@ public class MainPageTest {
     }
 
     @Test
-    public void test() throws InterruptedException {
+    public void test(){
         VideoPage videoPage = searchVideoPage.searchContext("Ураган");
         videoPage.searchAnyTrailerByNumber(2);
 
