@@ -32,7 +32,10 @@ public class VideoPage {
 
     public void searchAnyTrailerByNumber (int number){
         List<WebElement> videos = allVideos;
-        actions.moveToElement(videos.get(number)).build().perform();
+        if (number <= videos.size()){
+            actions.moveToElement(videos.get(number)).build().perform();
+            }
+            else System.out.println("Введеный номер видео превышает общее их число на странице");
     }
 }
 
